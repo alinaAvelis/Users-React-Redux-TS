@@ -1,0 +1,23 @@
+.button {
+    display: block;
+    height: fit-content;
+    padding: 5px 15px;
+    margin-top: 0.9rem;
+
+    font: inherit;
+    cursor: pointer;
+    color: white;
+
+    background-color: #4B51EF;
+    border: none;
+    border-radius: 5px;
+
+    &:hover {
+        padding: 8px 15px;
+    }
+
+    &:active {
+        opacity: 0.8;
+    }
+
+}

@@ -1,0 +1,9 @@
+.user_list {
+    display: block;
+    padding-top: 1.4rem !important;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1.4rem;
+}

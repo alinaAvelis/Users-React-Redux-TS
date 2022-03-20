@@ -1,0 +1,44 @@
+.user_list__item {
+    padding: 0.9rem;
+
+    background-color: #F3F3F3;
+    border-radius: 8px;
+
+    align-items: flex-end;
+
+    animation-name: showCards;
+    animation-duration: 1s;
+}
+
+.list__tem__text {
+    &--gray {
+        color: #A3A3A3;
+        margin-right: 0.5rem;
+    }
+}
+
+.user__link {
+    text-decoration: none;
+    color: #4B51EF;
+    font: inherit;
+
+    &:hover {
+        font-size: 1.1rem;
+    }
+
+    &:active {
+        opacity: 0.6;
+    }
+}
+
+@keyframes showCards {
+    from {
+        margin-top: -50px;
+        opacity: 0;
+    }
+
+    to {
+        margin-top: 0;
+        opacity: 1;
+    }
+} 

@@ -1,0 +1,40 @@
+
+.spinner__squere,
+.spinner__sub_squere {
+    border: 3px dotted #4B51EF;
+    // border-radius: 50%;
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.spinner__squere {
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+
+    @media (min-width:1200px) {
+        width: 200px;
+        height: 200px;
+      }
+}
+
+.spinner__sub_squere {
+    width: 50px;
+    height: 50px;
+    margin: 25% auto;
+
+
+    @media (min-width:1200px) {
+        width: 100px;
+        height: 100px;
+      }
+}
+
+@keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} 
