@@ -8,7 +8,7 @@ type UserListItemProps = {
     name: string;
     city: string;
     company: string;
-    id: number;
+    id: string;
   };
 
 export const UserListItem = (

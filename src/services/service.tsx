@@ -15,7 +15,7 @@ export default class Service {
         return  this.getResourse(`/users`);
     }
 
-     getUser(id: number) {
+     getUser(id: string) {
         return  this.getResourse(`/${id}`);
     }
 }

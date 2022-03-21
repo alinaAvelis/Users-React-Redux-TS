@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from '../../components/button/button';
 
+import UserCard from '../../actions/user-card/userCard';
+
 // type ButtonProps = {
 //     text: string;
 //     onClickHundler: Function;
@@ -20,10 +22,11 @@ const UserCardPage = (
                     <h1 className='title'>Профиль пользователя</h1>
 
                     <Button 
-                        text='Редактироввать'
+                        text='Редактировать'
                         onClickHundler={edit}/>
                 </div>
-                
+                 
+                 <UserCard />
                
             </section> 
         )

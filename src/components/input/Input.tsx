@@ -10,9 +10,10 @@ type InputProps = {
     onChangeHandler: Function;
     placeholder: string;
     labelText: string;
+    readonly: boolean;
   };
 
-const InputComponent = ({type, name, inputId, inputValue, onChangeHandler, placeholder, labelText} : InputProps) => {
+const InputComponent = ({type, name, inputId, inputValue, onChangeHandler, placeholder, labelText, readonly} : InputProps) => {
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandler(event.target.value)
@@ -39,7 +40,15 @@ const InputComponent = ({type, name, inputId, inputValue, onChangeHandler, place
     return (
         <label>
             <p>{labelText}</p>
-            <input type={type} name={name} id={inputId} value={inputValue} placeholder={placeholder}  onChange={onChange}/>
+            <input 
+                type={type} 
+                name={name} 
+                id={inputId} 
+                value={inputValue} 
+                placeholder={placeholder}  
+                onChange={onChange}
+                readOnly={readonly}
+            />
         </label>
     )
 }

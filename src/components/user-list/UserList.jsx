@@ -18,7 +18,9 @@ export const UsersList = ({usersError, usersRequested, usersLoaded, loading, err
     useEffect(() => {
             usersRequested();
             appContext.getUsers()
-            .then((res) => usersLoaded(res)) 
+            .then((res) => {
+              usersLoaded(res);
+            }) 
             .catch(()=> {
               usersError();
             })        
