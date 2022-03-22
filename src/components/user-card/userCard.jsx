@@ -81,6 +81,7 @@ const UserCard = ({users, readonly, usersLoaded, setReadonly, loading, error, us
           }
 
           user = newContact;
+          console.log(JSON.stringify(newContact));
           setInputs(user.name, user.username, user.email, user.address.street, user.address.city, user.address.zipcode, user.phone, user.website, user.comment);
         }
       }
@@ -88,18 +89,7 @@ const UserCard = ({users, readonly, usersLoaded, setReadonly, loading, error, us
       usersLoaded(newUsersArr);
 
       setReadonly(true);
-      
 
-      if(inputName || userNameInput || emailInput || phoneInput) {
-       
-          // setErrorMess('');
-          // console.log(users);
-          // const contactsArray = [...users];
-          // const index = contactsArray.findIndex(elem => elem.id === id);
-          // contactsArray[index] = {...newContact, "contactId": contactsArray[index].contactId};
-          // usersLoaded(contactsArray);
-          
-      }
     }
 
     if(loading) {
