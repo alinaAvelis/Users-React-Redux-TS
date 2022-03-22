@@ -1,6 +1,5 @@
 import React from 'react';
-import { Input, Space } from 'antd';
-import { EyeInvisibleOutlined, EyeTwoTone} from '@ant-design/icons';
+import "./input.scss";
 
 type InputProps = {
     type: string;
@@ -11,30 +10,13 @@ type InputProps = {
     placeholder: string;
     labelText: string;
     readonly: boolean;
+    required: boolean;
   };
 
-const InputComponent = ({type, name, inputId, inputValue, onChangeHandler, placeholder, labelText, readonly} : InputProps) => {
+const InputComponent = ({type, name, inputId, inputValue, onChangeHandler, placeholder, labelText, readonly, required} : InputProps) => {
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         onChangeHandler(event.target.value)
-    }
-
-    if(type === "password") {
-        return (
-            <label>
-                <p>{labelText}</p>
-                <Space direction="vertical">
-                    <Input.Password
-                    placeholder={placeholder}
-                    value={inputValue}
-                    onChange={onChange}
-                    id={inputId}
-                    name={name}
-                    iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-                    />
-                </Space>
-            </label>
-        ) 
     }
 
     return (
@@ -48,6 +30,7 @@ const InputComponent = ({type, name, inputId, inputValue, onChangeHandler, place
                 placeholder={placeholder}  
                 onChange={onChange}
                 readOnly={readonly}
+                required={required}
             />
         </label>
     )

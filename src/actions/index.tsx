@@ -7,6 +7,13 @@ const usersLoaded = (newData: Array<object>) => {
     };
 };
 
+const usersSorting = (newData: Array<object>) => {
+    return {
+        type: 'USERS_SORTING',
+        payload: newData
+    };
+};
+
 
 const usersRequested = () => {
     return {
@@ -20,10 +27,18 @@ const usersError = () => {
     };
 };
 
+const stopLoading = () => {
+    return {
+        type: 'STOP_LOADING'
+    };
+};
+
 
 
 export {
     usersLoaded,
+    usersSorting,
     usersRequested,
-    usersError
+    usersError,
+    stopLoading
 };

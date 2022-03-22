@@ -1,9 +1,9 @@
-import React, {useEffect, useContext, useState} from 'react';
+import React, {useEffect, useContext} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import AppServiceContext from '../app-service-context/app-service-context';
-import {usersLoaded, usersRequested, usersError } from '../../actions';
+import {usersLoaded, usersRequested, usersError, usersSorting } from '../../actions';
 import Spinner from '../spinner';
 import Error from '../error/error';
 import { UserListItem } from '../user-list-item/UserListItem';
@@ -12,14 +12,15 @@ import './userList.scss';
 
 
 
-export const UsersList = ({usersError, usersRequested, usersLoaded, loading, error, users, setTotalCounter}) => {
+export const UsersList = ({usersError, usersRequested, usersSorting, usersLoaded, loading, error, users, sortUsers, setTotalCounter}) => {
     const appContext = useContext(AppServiceContext);
   
     useEffect(() => {
             usersRequested();
             appContext.getUsers()
-            .then((res) => {
-              usersLoaded(res);
+            .then((res) => {           
+              usersLoaded(JSON.parse(JSON.stringify(res)));
+              usersSorting(JSON.parse(JSON.stringify(res)));
             }) 
             .catch(()=> {
               usersError();
@@ -32,7 +33,6 @@ export const UsersList = ({usersError, usersRequested, usersLoaded, loading, err
       }    
     }, [users]);
   
-  
     if(loading) {
       return <Spinner />
     } 
@@ -43,7 +43,7 @@ export const UsersList = ({usersError, usersRequested, usersLoaded, loading, err
  
       return (
         <ul className='user_list  list_list_style_type_none'>
-          { users.map(item => {
+          { sortUsers.map(item => {
                 return <li className='user_list__item flex  space-between' key={item.id}>
                 <UserListItem
                   name={item.name}
@@ -60,25 +60,27 @@ export const UsersList = ({usersError, usersRequested, usersLoaded, loading, err
     usersError: PropTypes.func, 
     usersRequested: PropTypes.func,
     usersLoaded: PropTypes.func,
+    usersSorting: PropTypes.func,
     loading: PropTypes.bool,
     error: PropTypes.bool, 
-    users: PropTypes.array
+    users: PropTypes.array,
+    sortUsers: PropTypes.array
   };
-
 
   
   const mapStateToProps = (state) => {
       return {
         users: state.users,
+        sortUsers: state.sortUsers,
         loading: state.loading,
         error: state.error
       }
     }
     
-    
     const mapDispatchToProps = {
       usersLoaded,
       usersRequested,
+      usersSorting,
       usersError,
     }
   

@@ -1,19 +1,37 @@
 .submit_btn {
+    min-width: fit-content !important;
     display: block;
-    max-width: 300px;
-    margin: 50px auto 0;
+    
+    margin: 1rem  0 0 auto;
 
-    color: #62487A;
+    color: white;
     cursor: pointer;
 
     font-weight: 700;
-    background-color: #EDDFFA;
+    background-color: #52CF4F;
+    border: 0;
+    border-radius: 5px;
 
     &:hover {
-        background-color: #C994FB;
+        background-color: #4c944b;
     }
 
     &:active {
         opacity: 0.5;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        background-color: #AFAFAF;
+        cursor: auto;
+
+        &:hover {
+            background-color: #AFAFAF;
+            
+        }
+    
+        &:active {
+            opacity: 1;
+        }
     }
 }

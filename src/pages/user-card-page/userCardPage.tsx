@@ -1,24 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from '../../components/button/button';
+import UserCard from '../../components/user-card/userCard';
+import './userCardPage.scss';
 
-import UserCard from '../../actions/user-card/userCard';
 
-// type ButtonProps = {
-//     text: string;
-//     onClickHundler: Function;
-//     classBtn: string;
-//   };
+const UserCardPage = () => {
 
-const UserCardPage = (
-    // {text, onClickHundler, classBtn} : ButtonProps
-    ) => {
+        const [readonly, setReadonly] = useState(true);
 
         const edit = () => {
-
+            setReadonly(false);
         }
+
         return (
             <section className='section'>
-                <div className="user_card__header">
+                <div className="user_card__header  flex">
                     <h1 className='title'>Профиль пользователя</h1>
 
                     <Button 
@@ -26,7 +22,7 @@ const UserCardPage = (
                         onClickHundler={edit}/>
                 </div>
                  
-                 <UserCard />
+                <UserCard readonly={readonly}  setReadonly={setReadonly}/>
                
             </section> 
         )

@@ -1,11 +1,12 @@
-import React, {useState} from'react';
+import React from'react';
 import "./submitButton.scss";
 
 type SubmitButtonProps = {
     value: string;
+    readonly: boolean
   };
 
-export const SubmitButton = ({value}:SubmitButtonProps) => {
+export const SubmitButton = ({value, readonly}:SubmitButtonProps) => {
 
 
     return (
@@ -13,6 +14,7 @@ export const SubmitButton = ({value}:SubmitButtonProps) => {
             className='submit_btn'
             type="submit"  
             value= {value}
+            disabled = {readonly}
         />
     )
 }

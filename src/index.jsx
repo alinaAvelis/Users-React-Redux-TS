@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
+// import { hashHistory } from 'react-router';
+// import { syncHistoryWithStore} from 'react-router-redux'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ErrorBoundry from './components/error-boundry'
@@ -13,13 +15,13 @@ import './index.scss';
 import './fonts.scss';
 
 const service = new Service();
-
+// const history = syncHistoryWithStore(hashHistory, store);
 
 ReactDOM.render(
   <Provider store={store}>
             <ErrorBoundry>
                 <AppServiceContext.Provider value={service}>
-                    <Router>
+                    <Router >
                         <App/>
                     </Router>
                 </AppServiceContext.Provider>
