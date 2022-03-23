@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Users-React-Redux-TS/static/css/main.c3384287.css",
-    "main.js": "/Users-React-Redux-TS/static/js/main.d79b04a0.js",
+    "main.js": "/Users-React-Redux-TS/static/js/main.6aee822e.js",
     "static/js/787.28cb0dcd.chunk.js": "/Users-React-Redux-TS/static/js/787.28cb0dcd.chunk.js",
     "static/media/Roboto-Medium.eot": "/Users-React-Redux-TS/static/media/Roboto-Medium.f9f0c87146a33023da7e.eot",
     "static/media/Roboto-Medium.ttf": "/Users-React-Redux-TS/static/media/Roboto-Medium.ef677e217f2009c16854.ttf",
@@ -14,11 +14,11 @@
     "static/media/Roboto-Regular.woff": "/Users-React-Redux-TS/static/media/Roboto-Regular.31012f9b3e3da44f87e8.woff",
     "index.html": "/Users-React-Redux-TS/index.html",
     "main.c3384287.css.map": "/Users-React-Redux-TS/static/css/main.c3384287.css.map",
-    "main.d79b04a0.js.map": "/Users-React-Redux-TS/static/js/main.d79b04a0.js.map",
+    "main.6aee822e.js.map": "/Users-React-Redux-TS/static/js/main.6aee822e.js.map",
     "787.28cb0dcd.chunk.js.map": "/Users-React-Redux-TS/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c3384287.css",
-    "static/js/main.d79b04a0.js"
+    "static/js/main.6aee822e.js"
   ]
 }
